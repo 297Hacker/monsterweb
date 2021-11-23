@@ -1,0 +1,18 @@
+{% extends 'view/layout/base.twig' %}
+
+{% block content %}
+    <section class="wrapper-404">
+        <aside class="left">
+            <h2>404</h2>
+            <p>{{ option.error_message }}</p>
+            <a href="{{ site.url }}">
+                <button class="main-cta-btn" aria-label="main">{{ option.button }}</button>
+            </a>
+        </aside>
+        <aside class="right">
+            <div class="cover">
+                <div class="circle_right"></div>
+            </div>
+        </aside>
+    </section>
+{% endblock %}

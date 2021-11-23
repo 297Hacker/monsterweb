@@ -1,0 +1,255 @@
+.services {
+
+    .services-wrapper {
+
+        h2 {
+
+            &:before {
+
+                color: $blue;
+                content: '\ea55';
+                font-family: 'icomoon';
+                font-size: rem(14);
+                margin-right: rem(10);
+
+            }
+
+        }
+
+        .fp-viewing-services-0 &,
+        .fp-viewing-services-1 &,
+        .fp-viewing-services-2 & {
+
+            @include transition();
+
+            transition-delay: 0.5s;
+
+        }
+
+    }
+
+    .fp-slides {
+
+        transition-delay: 0.5s !important;
+
+    }
+
+    .fp-slidesNav {
+
+        bottom: rem(5);
+        width: rem(100);
+
+        @include breakpoint(medium) {
+
+            bottom: rem(20);
+
+        }
+
+        ul {
+
+            li {
+
+                margin: rem(0 10 0 0);
+
+            }
+
+        }
+
+    }
+
+    .content-figure {
+
+        background: transparent 50% 50% no-repeat;
+        background-size: cover;
+        display: none;
+        height: rem(400);
+        margin: rem(70 0 0 50);
+        width: calc(100% - 50px);
+
+        @include breakpoint(medium) {
+
+            display: block;
+
+        }
+
+    }
+
+    .slide {
+
+        @include transition();
+
+        opacity: 0;
+
+        &.active {
+
+            @include transition();
+
+        }
+
+        .cta-btn {
+
+            @include mainButton();
+
+        }
+
+        .fp-tableCell {
+
+            vertical-align: 0;
+
+            @include breakpoint(medium) {
+
+                vertical-align: middle;
+
+            }
+
+            p {
+
+                font-size: rem(14);
+                margin: 0;
+                max-width: rem(500);
+                padding: rem(15 0);
+                text-align: justify;
+                width: 100%;
+
+                @include breakpoint(small) {
+
+                    font-size: rem(12);
+
+                }
+
+                @include breakpoint(medium) {
+
+                    font-size: rem(16);
+                    padding: rem(25 0);
+
+                }
+
+                @include breakpoint(large) {
+
+                    padding: rem(40 0);
+
+                }
+
+            }
+
+        }
+
+    }
+
+    .nav-content {
+
+        .left,
+        .right {
+
+            @include transition();
+
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            display: none;
+            position: absolute;
+            outline: none;
+            top: 50%;
+            transform: translateY(-50%);
+
+            &:before {
+
+                @include icomoon();
+
+                color: $blue;
+                font-size: rem(24);
+
+            }
+
+            @include breakpoint(medium) {
+
+                display: block;
+
+            }
+
+            @include breakpoint(large) {
+
+                &:before {
+
+                    font-size: rem(30);
+
+                }
+
+            }
+
+            @media (max-height: 768px) and (max-width: 1024px) {
+
+                display: none;
+
+            }
+
+        }
+
+        .left {
+
+            left: rem(5);
+
+            @include breakpoint(large) {
+
+                left: rem(50);
+
+            }
+
+            &:before {
+
+                content: '\ea44';
+
+            }
+
+            .fp-viewing-services-0 & {
+
+                opacity: 0;
+
+            }
+
+        }
+
+        .right {
+
+            right: rem(5);
+
+            @include breakpoint(large) {
+
+                right: rem(50);
+
+            }
+
+            &:before {
+
+                content: '\ea42';
+
+            }
+
+            .fp-viewing-services-2 & {
+
+                opacity: 0;
+
+            }
+
+        }
+
+    }
+
+    ul {
+
+        li {
+
+            a {
+
+                span {
+
+                    background: $blue;
+                }
+
+            }
+
+        }
+
+    }
+
+}

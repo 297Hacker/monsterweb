@@ -1,0 +1,104 @@
+.mobile-menu {
+
+    background-color: $blue;
+    display: none;
+    height: 100vh;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+    &.open {
+
+        display: block;
+
+    }
+
+    ul {
+
+        @include reset-ul();
+
+        position: absolute;
+        top: 45%;
+        transform: translateY(-45%);
+        width: 100%;
+
+        .mobile-item {
+
+            padding: rem(10 0);
+            text-align: center;
+
+            a {
+
+                color: $white;
+                font-size: rem(22);
+                width: 100%;
+
+            }
+
+        }
+
+    }
+
+}
+
+.menu-icon,
+.close-icon {
+
+    display: none;
+
+    @include breakpoint(medium) {
+
+        display: none;
+
+    }
+
+    img {
+
+        height: rem(30);
+        position: absolute;
+        right: rem(15);
+        width: rem(30);
+
+    }
+
+    &.open {
+
+        display: none;
+
+    }
+
+    .white {
+
+        display: none;
+
+        .fp-viewing-contact & {
+
+            @include transition();
+
+            display: block;
+
+        }
+
+    }
+
+}
+
+.close-icon {
+
+    display: none;
+
+    img {
+
+        height: rem(25);
+        width: rem(25);
+
+    }
+
+    &.open {
+
+        display: block;
+
+    }
+
+}

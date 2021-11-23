@@ -1,0 +1,359 @@
+html {
+    cursor: auto;
+    scroll-behavior: smooth;
+}
+
+body {
+
+    @include clear();
+    @extend %popExtraLight;
+
+    color: $black;
+    cursor: auto;
+
+    a {
+
+        @include reset-ul();
+
+    }
+
+    figure {
+
+        margin: 0;
+        padding: 0;
+
+    }
+
+    .content {
+
+        &.left {
+
+            float: left;
+            width: 100%;
+
+            @include breakpoint(medium) {
+
+                width: 50%;
+
+            }
+
+        }
+
+        &.right {
+
+            float: right;
+            text-align: right;
+            width: 100%;
+
+            @include breakpoint(medium) {
+
+                width: 50%;
+
+            }
+
+        }
+
+    }
+
+    .coming-soon {
+
+        h2 {
+
+            color: $white;
+            left: 50%;
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+
+        }
+
+    }
+
+    .cursor {
+        background-color: $blue;
+        border-radius: rem(8);
+        display: none;
+        height: rem(8);
+        left: calc(50% - 97px);
+        pointer-events: none;
+        position: fixed;
+        top: rem(35);
+        width: rem(8);
+        z-index: 10;
+
+        @include breakpoint(medium) {
+            display: block;
+        }
+
+        &.disable {
+            display: none;
+        }
+
+    }
+
+    .cursor-background {
+        background-color: $grey-lig;
+        border-radius: rem(40);
+        display: none;
+        height: rem(40);
+        left: calc(50% - 113px);
+        position: fixed;
+        pointer-events: none;
+        opacity: 0.3;
+        top: rem(20);
+        width: rem(40);
+        z-index: 9;
+
+        @include breakpoint(medium) {
+            display: block;
+        }
+
+        &.disable {
+            display: none;
+        }
+    }
+
+    .email,
+    .phone_number {
+        @extend %popLight;
+
+        bottom: rem(35);
+        color: $blue;
+        font-size: rem(16);
+        left: rem(15);
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        text-decoration: none;
+
+        @include breakpoint(medium) {
+            bottom: rem(20);
+            left: rem(50);
+        }
+
+    }
+
+    .email {
+        left: unset;
+        right: rem(15);
+
+        @include breakpoint(medium) {
+            right: rem(50);
+        }
+
+    }
+
+    .main-logo {
+
+        @include clear();
+
+        display: inline-block;
+        height: auto;
+        left: calc(50% - 150px);
+        position: absolute;
+        opacity: 0;
+        transform: translateX(calc(-50% + 150px));
+        vertical-align: middle;
+        width: rem(150);
+        z-index: 10;
+
+        @include breakpoint(medium) {
+            left: calc(50% - 200px);
+            transform: translateX(calc(-50% + 200px));
+            width: rem(200);
+        }
+
+        &.top {
+            left: calc(50% - 150px);
+            top: calc(50% - 60px);
+            transform: translate(calc(-50% + 150px), calc(-50% + 60px));
+            width: rem(150);
+            @include breakpoint(medium) {
+                left: calc(50% - 200px);
+                top: calc(50% - 60px);
+                transform: translate(calc(-50% + 200px), calc(-50% + 80px));
+                width: rem(200);
+            }
+        }
+
+        &.animation {
+            opacity: 1;
+            top: rem(15);
+            transition: opacity 0.7s cubic-bezier(0.86, 0, 0.07, 1) 0.3s, top 0.5s cubic-bezier(.88, .22, .15, .77) 1.5s;
+
+            @include breakpoint(medium) {
+                top: rem(22);
+            }
+        }
+
+    }
+
+    .scroll-toggle {
+        animation: scroll-down 1.5s ease-out 1s infinite;
+        bottom: rem(25);
+        left: 50%;
+        position: absolute;
+        transform: translateX(-50%);
+
+        &:before {
+            @include icomoon();
+            color: $blue;
+            content: '\ea3e';
+            font-size: rem(24);
+        }
+
+    }
+
+    .spacing {
+        background-color: $white;
+        height: 100vh;
+        opacity: 0;
+        z-index: 5;
+
+        &.animation {
+            opacity: 1;
+            transition: opacity 0.3s cubic-bezier(0.420, 0.000, 0.580, 1.000) 0.3s;
+        }
+    }
+
+    .services-wrapper,
+    .clients-wrapper,
+    .contact-wrapper {
+        @include clearFix();
+        @include transition();
+        display: block;
+        height: auto;
+        opacity: 0;
+        margin-top: rem(75);
+        padding: rem(0 $gutter-small);
+        position: absolute;
+        top: 0;
+        transform: none;
+        width: calc(100% - 30px);
+
+        @include breakpoint(medium) {
+            margin-top: 0;
+            padding: rem(0 $gutter-medium);
+            top: 50%;
+            transform: translateY(-50%);
+            width: calc(100% - 100px);
+
+        }
+
+        @include breakpoint(large) {
+            padding: rem(0 $gutter-large);
+            width: calc(100% - 400px);
+        }
+
+        @media (max-height: 768px) and (max-width: 1024px) {
+            padding: rem(0 $gutter-small);
+            width: calc(100% - 30px);
+        }
+
+    }
+
+    .home-content-wrapper {
+        height: rem(210);
+        right: 100%;
+        position: absolute;
+        top: calc(50% - 210px);
+        transform: translateY(calc(-50% + 210px));
+        width: calc(100% - 60px);
+
+        @include breakpoint(medium) {
+            height: rem(205);
+            width: calc(100% - 100px);
+        }
+
+        .home-title,
+        .home-sub-title {
+
+            @extend %pop;
+            color: $black;
+            display: block;
+            font-size: rem(38);
+            line-height: rem(48);
+            position: relative;
+            width: fit-content;
+
+            @include breakpoint(medium) {
+                font-size: rem(48);
+                line-height: rem(100);
+            }
+
+            @include breakpoint(large) {
+                font-size: rem(68);
+                line-height: rem(78);
+            }
+
+        }
+
+        .home-sub-title {
+            font-size: rem(18);
+            line-height: rem(28);
+            margin-bottom: rem(10);
+
+            @include breakpoint(medium) {
+                font-size: rem(28);
+                line-height: rem(38);
+                margin-bottom: rem(15);
+            }
+
+            @include breakpoint(large) {
+                font-size: rem(38);
+                line-height: rem(48);
+            }
+
+        }
+
+        &.animation {
+            right: rem(30);
+            transition: all 0.3s cubic-bezier(0.86, 0, 0.07, 1) 0.4s;
+
+            @include breakpoint(medium) {
+                right: rem(50);
+            }
+        }
+
+    }
+
+    .main-cta-btn {
+        background-color: $blue;
+        border: none;
+        color: $white;
+        font-size: rem(16);
+        line-height: rem(16);
+        outline: none;
+        padding: rem(20 30);
+        position: relative;
+        transition: all 0.3s cubic-bezier(0.86, 0.12, 0.27, 0.85);
+
+        @include breakpoint(medium) {
+            &:hover {
+                cursor: pointer;
+                padding: rem(20 40 20 20);
+                transition: all 0.3s cubic-bezier(0.86, 0.12, 0.27, 0.85);
+
+                &:after {
+                    opacity: 1;
+                    transition: all 0.2s cubic-bezier(0.86, 0.12, 0.27, 0.85) 0.1s;
+                }
+
+            }
+        }
+
+        &:after {
+            color: $white;
+            content: '\ea3c';
+            font-family: 'icomoon';
+            font-size: rem(16);
+            opacity: 0;
+            position: absolute;
+            right: rem(20);
+            top: rem(20);
+            transition: all 0.3s cubic-bezier(0.86, 0.12, 0.27, 0.85);
+        }
+    }
+
+}

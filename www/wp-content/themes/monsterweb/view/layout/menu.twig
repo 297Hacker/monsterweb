@@ -1,0 +1,38 @@
+<section class="menu-wrapper">
+    <nav class="main-menu">
+        <ul>
+            {% for item in mainmenu.get_items %}
+                <li class="menu-item">
+                    <a href="{{ item.link }}">{{ item.title }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </nav>
+    <form class="contact-form" method="post">
+        <div class="name-wrapper">
+            <label for="name-input" class="name">Name:</label>
+            <input name=" name" id="name-input" class="#" placeholder="enter your name" required>
+        </div>
+        <div class="lastname-wrapper">
+            <label for="lastname-input" class="lastname">Lastname:</label>
+            <input name="lastname" id="lastname-input" class="#" type="text" placeholder="enter your lastname" required>
+        </div>
+        <div class="email-wrapper">
+            <label for="email-input" class="mail">Email:</label>
+            <input name="email" id="email-input" class="#" type="email" placeholder="enter your email" required>
+        </div>
+        <div class="message-wrapper">
+            <label for="message-input" class="message">Message</label>
+            <textarea name="message" id="message-input" class="#" cols="30" rows="10" placeholder="send us a message"></textarea>
+        </div>
+        <div class="error-message">the highlighted boxes are required</div>
+        <button id="send-contact-btn" class="main-cta-btn submit" type="button">send</button>
+    </form>
+    <div class="success-message"></div>
+    <address class="contact-content">
+        <span class="location">{{ option.location }}</span>
+        <span class="second-location">{{ option.second_location }}</span>
+        <a href="tel:{{ option.number }}"><span class="phone-number">{{ option.number }}</span></a>
+        <a href="mailto:{{ option.email }}"><span class="mail">{{ option.email }}</span></a>
+    </address>
+</section>

@@ -1,0 +1,160 @@
+.main-header {
+
+    height: rem(40);
+    padding: rem(15 $gutter-small 0);
+    position: absolute;
+    top: 0;
+    width: calc(100% - 20px);
+    z-index: 9;
+    transition: top 0.3s cubic-bezier(.88, .22, .15, .77);
+
+    @include breakpoint(medium) {
+        height: rem(60);
+        padding: rem(20 $gutter-medium 0);
+        width: calc(100% - 50px);
+    }
+
+    @include breakpoint(large) {
+        padding: rem(20 $gutter-large 0);
+        width: calc(100% - 100px);
+    }
+
+    @media (max-height: 768px) and (max-width: 1024px) {
+        padding: rem(15 $gutter-small 0);
+        width: calc(100% - 20px);
+    }
+
+    &.animation {
+        top: rem(-40);
+        @include breakpoint(medium) {
+            top: rem(-60);
+        }
+    }
+
+    .menu-toggle {
+
+        background: transparent;
+        border: none;
+        float: right;
+        height: rem(40);
+        opacity: 1;
+        outline: none;
+        padding: 0;
+        position: relative;
+        width: rem(40);
+        transition: opacity 0.3s cubic-bezier(0.420, 0.000, 0.580, 1.000);
+
+        @include breakpoint(medium) {
+            height: rem(60);
+            width: rem(50);
+        }
+
+        &.animation {
+            opacity: 0;
+        }
+
+        &.open {
+
+            &:after {
+                top: rem(9);
+                transform: rotate(-45deg);
+                transition: all 0.3s cubic-bezier(0.86, 0, 0.07, 1) 0.2s;
+                width: rem(20);
+                @include breakpoint(medium) {
+                    top: rem(10);
+                    width: rem(26);
+                }
+            }
+
+            &:before {
+                top: rem(9);
+                transform: rotate(45deg);
+                transition: all 0.3s cubic-bezier(0.86, 0, 0.07, 1) 0.2s;
+                width: rem(20);
+                @include breakpoint(medium) {
+                    top: rem(10);
+                    width: rem(26);
+                }
+            }
+
+            &:hover {
+
+                &:after {
+                    width: rem(20);
+                    @include breakpoint(medium) {
+                        width: rem(26);
+                    }
+                }
+
+                &:before {
+                    width: rem(20);
+                    @include breakpoint(medium) {
+
+                        width: rem(26);
+                    }
+                }
+
+            }
+
+        }
+
+        &:after {
+            background-color: $blue;
+            content: '';
+            height: rem(3);
+            position: absolute;
+            right: 0;
+            top: rem(14);
+            transition: all 0.3s cubic-bezier(0.86, 0, 0.07, 1) 0.2s;
+            width: rem(20);
+
+            @include breakpoint(medium) {
+                height: rem(4);
+                top: rem(19);
+                width: rem(25);
+            }
+        }
+
+        &:before {
+            background-color: $blue;
+            content: '';
+            height: rem(3);
+            position: absolute;
+            right: 0;
+            top: rem(7);
+            transition: all 0.3s cubic-bezier(0.86, 0, 0.07, 1) 0.2s;
+            width: rem(16);
+
+            @include breakpoint(medium) {
+                height: rem(4);
+                top: rem(10);
+                width: rem(20);
+            }
+        }
+
+        &:hover {
+            cursor: pointer;
+            &:after {
+                width: rem(16);
+                @include breakpoint(medium) {
+                    width: rem(20);
+                    transition: all 0.3s cubic-bezier(0.86, 0, 0.07, 1);
+                }
+            }
+            &:before {
+                width: rem(20);
+                @include breakpoint(medium) {
+                    width: rem(25);
+                    transition: all 0.3s cubic-bezier(0.86, 0, 0.07, 1);
+                }
+
+            }
+            .cursor,
+            .cursor-bckground & {
+                display: none;
+            }
+        }
+
+    }
+
+}

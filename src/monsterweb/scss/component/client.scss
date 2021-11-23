@@ -1,0 +1,95 @@
+.clients {
+
+    background-color: $grey-dark;
+
+    .clients-wrapper {
+
+        .clients-content {
+
+            @include transition();
+
+            border-bottom: solid 1px $white;
+            border-right: none;
+            filter: grayscale(1);
+            float: left;
+            margin-bottom: 0;
+            max-height: rem(100);
+            padding: rem(25 100);
+            width: calc(100% - 200px);
+
+            @include breakpoint(medium) {
+
+                border-bottom: none;
+                border-right: solid 1px $white;
+                padding: rem(50);
+                width: calc(25% - 101px);
+
+            }
+
+            @include breakpoint(large) {
+
+                padding: rem(40 50);
+
+            }
+
+            &:hover {
+
+                @include transition();
+
+                filter: none;
+
+            }
+
+            &:first-child {
+
+                padding: rem(0 100 25);
+
+                @include breakpoint(medium) {
+
+                    padding: rem(50);
+
+                }
+
+                @include breakpoint(large) {
+
+                    padding: rem(40 50);
+
+                }
+
+            }
+
+            &:nth-child(4),
+            &:nth-child(8) {
+
+                border: none;
+
+            }
+
+            .clients-logo {
+
+                background: transparent 50% 50% no-repeat;
+                background-size: contain;
+                min-height: rem(75);
+                width: 100%;
+
+                @include breakpoint(medium) {
+
+                    min-height: rem(100);
+
+                }
+
+            }
+
+        }
+
+        .fp-viewing-clients & {
+
+            @include transition();
+
+            transition-delay: 500ms;
+
+        }
+
+    }
+
+}

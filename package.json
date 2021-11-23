@@ -1,0 +1,44 @@
+{
+  "name": "monsterweb",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "yarn run dev -- --watch",
+    "watch-poll": "yarn run watch -- --watch-poll",
+    "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "build": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+  },
+  "dependencies": {
+    "@components/foundation-sites": "zurb/foundation-sites#6.4.2",
+    "@components/fullpage.js": "alvarotrigo/fullPage.js#*",
+    "@components/gsap": "greensock/GreenSock-JS#~1.18.3",
+    "@components/inline-svg": "jonnyhaynes/inline-svg#*",
+    "@components/jquery-mousewheel": "jquery/jquery-mousewheel#^3.1.13",
+    "@components/magnific-popup": "dimsemenov/Magnific-Popup#^1.1.0",
+    "@components/particles.js": "VincentGarreau/particles.js#^2.0.0",
+    "@components/svg4everybody": "jonathantneal/svg4everybody#~2.0.3",
+    "@components/twigjs-bower": "philsbury/twigjs-bower#*",
+    "@components/typed.js": "mattboldt/typed.js#*",
+    "font-awesome": "FortAwesome/Font-Awesome#~4.4.0",
+    "jquery": "^3.6.0"
+  },
+  "devDependencies": {
+    "axios": "^0.18",
+    "babel-preset-react": "^6.24.1",
+    "bootstrap": "^4.0.0",
+    "browser-sync": "^2.26.3",
+    "browser-sync-webpack-plugin": "2.0.1",
+    "cross-env": "^5.1",
+    "laravel-mix": "^2.0",
+    "lodash": "^4.17.5",
+    "node-sass": "^4.14.1",
+    "popper.js": "^1.12",
+    "sass": "^1.14.3",
+    "sass-loader": "^7.1.0"
+  },
+  "engines": {
+    "node": ">=0.12"
+  },
+  "private": true
+}

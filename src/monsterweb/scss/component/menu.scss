@@ -1,0 +1,343 @@
+.menu-wrapper {
+
+    background-color: $grey-dark;
+    border: 10px solid $grey-dark;
+    border-bottom: 80px solid $grey-dark;
+    height: calc(100vh - 90px);
+    position: fixed;
+    left: 100vw;
+    transition: left 0.5s cubic-bezier(0.86, 0.12, 0.27, 0.85);
+    width: calc(100vw - 20px);
+    z-index: 8;
+
+    @include breakpoint(medium) {
+        border: 50px solid $grey-dark;
+        border-bottom: 50px solid $grey-dark;
+        margin-bottom: 0;
+        height: calc(100vh - 100px);
+        width: calc(100vw - 100px);
+    }
+
+    &.open {
+        margin-right: 0;
+        left: 0;
+        transition: left 0.5s cubic-bezier(0.86, 0.12, 0.27, 0.85);
+
+    }
+
+    .contact-content {
+        bottom: 0;
+        max-height: rem(200);
+        margin: 0;
+        position: absolute;
+        left: calc(50% - 550px);
+        transform: translateX(calc(-50% + 550px));
+        width: fit-content;
+
+        @include breakpoint(medium) {
+            width: fit-content;
+        }
+
+        .mail,
+        .phone-number,
+        .location,
+        .second-location {
+            @extend %pop;
+            border-right: 1px solid $white;
+            color: $white;
+            font-size: rem(12);
+            font-style: normal;
+            line-height: rem(12);
+            padding: rem(0 15);
+            position: relative;
+
+            @include breakpoint(medium) {
+                font-size: rem(14);
+                line-height: rem(14);
+                padding: rem(0 30);
+            }
+
+            @include breakpoint(large) {
+                padding: rem(0 35);
+            }
+
+            &:after {
+                background-color: $neon;
+                bottom: rem(3);
+                content: '';
+                height: rem(5);
+                left: 0;
+                position: absolute;
+                width: 0;
+                transition: width 0.4s cubic-bezier(0.86, 0.12, 0.27, 0.85);
+                z-index: -1;
+            }
+
+            &:hover {
+                &:after {
+                    width: 33.3%;
+                    transition: width 0.4s cubic-bezier(0.86, 0.12, 0.27, 0.85);
+                }
+
+            }
+        }
+        .location,
+        .second-location {
+            padding-left: 0;
+            &:hover {
+                &:after {
+                    width: 0;
+                }
+            }
+        }
+        .phone-number,
+        .second-location {
+            @include breakpoint(medium) {
+                padding: rem(0 30);
+            }
+            &:after {
+                left: rem(14);
+                @include breakpoint(medium) {
+                    left: rem(30);
+                }
+            }
+        }
+        .mail {
+            border-right: none;
+            display: inline-block;
+            padding: 0;
+
+            @include breakpoint(medium) {
+                display: unset;
+                padding: rem(0 0 0 35);
+            }
+
+            &:after {
+                left: rem(16);
+                @include breakpoint(medium) {
+                    left: rem(32);
+                }
+            }
+        }
+
+    }
+
+    .contact-form {
+        margin: rem(0 20);
+        bottom: rem(30);
+        max-width: calc(100% - 40px);
+        position: absolute;
+        right: 0;
+        top: unset;
+        transform: translateY(0);
+        width: 100%;
+
+        @include breakpoint(medium) {
+            bottom: unset;
+            margin-right: 0;
+            max-width: rem(500);
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        @include breakpoint(xlarge) {
+            margin-right: 10%;
+        }
+
+        &.disable {
+            display: none;
+        }
+
+        .error-message{
+            color: $neon;
+            float: left;
+            opacity: 0;
+            font-size: rem(12);
+            width: fit-content;
+
+            @include breakpoint(medium) {
+                font-size: rem(16);
+            }
+
+            &.visible {
+                opacity: 1;
+            }
+        }
+
+        .name,
+        .lastname,
+        .mail,
+        .message {
+            @extend %popMed;
+            color: $white;
+        }
+
+        .name-wrapper,
+        .lastname-wrapper,
+        .email-wrapper,
+        .message-wrapper {
+            margin: 5px 0 0 0;
+
+            @include breakpoint(medium) {
+                margin: 15px 0 0 0;
+            }
+        }
+
+        #name-input,
+        #lastname-input,
+        #email-input,
+        #message-input {
+            @extend %popLight;
+            border-radius: 0;
+            font-size: rem(16);
+            border: none;
+            height: rem(35);
+            margin: 0;
+            padding: rem(0 5);
+            width: calc(100% - 10px);
+
+            @include breakpoint(medium) {
+                margin: 5px 0 0 0;
+                height: rem(50);
+            }
+
+            &:focus {
+                border-left: 3px solid $neon;
+                width: calc(100% - 13px);
+                outline: none;
+            }
+
+            &::placeholder {
+                @extend %popLight;
+                font-variant: small-caps;
+            }
+
+            &.invalid {
+                border-left: 3px solid $neon;
+            }
+        }
+
+        #message-input {
+            height: rem(100);
+            padding: rem(5 3);
+
+            @include breakpoint(medium) {
+                height: rem(150);
+                padding: rem(10 5);
+            }
+        }
+
+        .submit {
+            float: right;
+            margin-top: rem(5);
+
+            @include breakpoint(medium) {
+                margin-top: rem(15);
+            }
+        }
+
+    }
+
+    .success-message {
+        @extend %pop;
+
+        color: $white;
+        font-size: 24px;
+        line-height: 24px;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        width: 50%;
+
+        @include breakpoint(medium) {
+            width: 50%;
+        }
+    }
+
+    .main-menu {
+
+        .menu-item {
+            margin: rem(20 0 0 0);
+
+            @include breakpoint(medium) {
+
+                margin: rem(50 0 0 0);
+
+            }
+
+            &:first-child {
+                margin-top: 0;
+
+                @include breakpoint(medium) {
+                    margin-top: 0;
+                }
+            }
+
+            a {
+
+                @extend %pop;
+
+                color: $white;
+                display: inline-block;
+                font-size: rem(32);
+                line-height: rem(32);
+                position: relative;
+                transition: all 0.2s cubic-bezier(0.86, 0, 0.07, 1);
+
+                &:after {
+                    background-color: $blue;
+                    bottom: rem(5);
+                    content: '';
+                    height: rem(25);
+                    left: 0;
+                    position: absolute;
+                    transition: width 0.3s cubic-bezier(0.86, 0, 0.07, 1);
+                    width: 33.3%;
+                    z-index: -1;
+                }
+
+                @include breakpoint(medium) {
+                    font-size: rem(84);
+                    line-height: rem(84);
+
+                    &:after {
+                        width: 0;
+                    }
+
+                    &:hover {
+                        &:after {
+                            transition: width 0.3s cubic-bezier(0.86, 0, 0.07, 1);
+                            width: 33.3%;
+                        }
+                    }
+
+                }
+
+            }
+
+        }
+
+        ul {
+
+            @include reset-ul();
+            height: auto;
+            margin-left: rem(20);
+            position: absolute;
+            top: calc(15% - 20px);
+            transform: translateY(calc(-15% + 20px));
+
+            @include breakpoint(medium) {
+                margin-left: 0;
+                top: calc(50% - 200px);
+                transform: translateY(calc(-50% + 200px));
+            }
+
+            @include breakpoint(xlarge) {
+                margin-left: 10%;
+            }
+
+        }
+
+    }
+
+}

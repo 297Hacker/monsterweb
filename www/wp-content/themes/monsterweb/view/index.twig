@@ -1,0 +1,24 @@
+{% extends 'view/layout/base.twig' %}
+
+{% block content %}
+    {% if is_home %}
+        <section class="section index">
+            <div id="spacing" class="spacing"></div>
+            <article class="home-content-wrapper">
+                <span class="home-title">{{ option.header }}</span>
+                <span class="home-sub-title">{{ option.sub_header }}</span>
+                <button class="main-cta-btn" aria-label="main">contact us</button>
+            </article>
+        </section>
+    {% endif %}
+    {% if '/about/' in post.link %}
+        <section class="about">
+            {% include 'view/components/about.twig' %}
+        </section>
+    {% endif %}
+    {% if '/cases/' in post.link %}
+        <section class="cases">
+            {% include 'view/components/cases.twig' %}
+        </section>
+    {% endif %}
+{% endblock %}

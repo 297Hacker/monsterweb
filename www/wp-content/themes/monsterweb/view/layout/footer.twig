@@ -1,0 +1,9 @@
+{% if is_home %}
+    <script type="text/javascript" src="{{ site.theme.uri }}/dist/js/home.js"></script>
+{% endif %}
+
+{% if '/about/' in post.link %}
+    <script type="text/javascript" src="{{ site.theme.uri }}/dist/js/about.js"></script>
+{% endif %}
+{{ wp_footer }}
+<script type="text/javascript" src="{{ site.theme.uri }}/dist/js/contact-form.js"></script>

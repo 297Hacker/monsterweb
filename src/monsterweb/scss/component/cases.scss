@@ -1,0 +1,317 @@
+.cases {
+
+    height: 100%;
+
+    .case-wrapper {
+        bottom: 0;
+        height: 100%;
+        left: 0;
+        opacity: 0;
+        overflow-y: hidden;
+        overflow-x: scroll;
+        position: fixed;
+        top: 0;
+        right: 0;
+        white-space: nowrap;
+        width: 100%;
+
+        &.animation {
+            opacity: 1;
+            transition: opacity 0.4s cubic-bezier(.88, .22, .15, .77) 0.3s;
+        }
+
+        @include breakpoint(large) {
+            overflow-y: hidden;
+            overflow-x: hidden;
+        }
+
+        .slide {
+            background: 50% 50% no-repeat;
+            background-size: cover;
+            border-left: $grey-lig solid 1px;
+            display: inline-block;
+            height: 100vh;
+            margin-right: rem(-5);
+            position: relative;
+            white-space: normal;
+            width: 100%;
+
+            @include breakpoint(medium) {
+                margin-right: rem(-4);
+                width: 50%;
+            }
+
+            @include breakpoint(large) {
+                width: 33.3%;
+            }
+
+            &:before {
+                background: $overlay;
+                content: '';
+                height: 100%;
+                opacity: 0.2;
+                position: absolute;
+                width: 100%;
+            }
+
+            &:hover {
+                @include transition();
+                @include cursorClick();
+
+                .background {
+                    @include breakpoint(medium) {
+                        margin-right: 0;
+                        transition: width 0.4s cubic-bezier(0.86, 0, 0.07, 1);
+                        width: 100%;
+                    }
+                }
+
+                .content-wrapper {
+                    .content {
+                        @include breakpoint(medium) {
+                            height: auto;
+                            min-height: rem(135);
+                        }
+                        p {
+
+                            @include breakpoint(medium) {
+                                opacity: 1;
+                                margin-bottom: 0;
+                                transition: margin-bottom 0.4s cubic-bezier(0.45, 0.12, 0.37, 0.85) 0.4s, opacity 0.2s cubic-bezier(0.45, 0.12, 0.37, 0.85) 0.6s;
+                            }
+                        }
+
+                        .tools {
+                            transition-delay: 0.4s;
+                        }
+                    }
+                }
+            }
+
+            .background {
+                background-color: $white;
+                height: 100%;
+                position: relative;
+                transition: width 0.4s cubic-bezier(0.86, 0, 0.07, 1) 0.4s;
+                width: 100%;
+
+                @include breakpoint(medium) {
+                    width: 0;
+                }
+            }
+
+            .content-wrapper {
+                background-color: $white;
+                height: auto;
+                padding-left: rem(25);
+                padding-right: rem(25);
+                width: calc(100% - 50px);
+
+                .content {
+                    height: auto;
+                    position: absolute;
+                    top: rem(55);
+                    transform: unset;
+                    width: inherit;
+
+                    @include breakpoint(medium) {
+                        height: rem(135);
+                        top: 50%;
+                        transform: translateY(-50%);
+                    }
+
+                    p {
+                        @extend %pop;
+                        float: left;
+                        font-size: rem(14);
+                        height: 100%;
+                        opacity: 1;
+                        margin-bottom: 0;
+                        margin-top: rem(10);
+                        max-height: rem(350);
+
+                        @include breakpoint(medium) {
+                            font-size: rem(16);
+                            opacity: 0;
+                            margin-bottom: rem(-400);
+                            margin-top: rem(15);
+                            max-height: rem(400);
+                            transition: margin-bottom 0.4s cubic-bezier(0.45, 0.12, 0.37, 0.85), opacity 0.2s cubic-bezier(0.45, 0.12, 0.37, 0.85);
+                        }
+                    }
+                }
+            }
+
+            .tools,
+            .year,
+            .website {
+                @extend %popMed;
+                font-size: rem(14);
+                float: left;
+                height: rem(20);
+                line-height: rem(14);
+                margin-top: rem(10);
+                position: relative;
+                padding-left: rem(25);
+                width: inherit;
+
+                @include breakpoint(medium) {
+                    font-size: rem(16);
+                    line-height: rem(16);
+                    margin-top: rem(15);
+                }
+
+                &:before {
+                    content: '\e9b7';
+                    color: $black;
+                    font-family: 'icomoon';
+                    font-size: rem(15);
+                    left: 0;
+                    position: absolute;
+
+                    @include breakpoint(medium) {
+                        font-size: rem(18);
+                    }
+                }
+
+            }
+
+            .year {
+                &:before {
+                    content: "\e948";
+                }
+            }
+
+            .website {
+                color: $black;
+                width: fit-content;
+                &:after {
+                    background: $blue;
+                    bottom: rem(5);
+                    content: '';
+                    height: rem(5);
+                    left: rem(-3);
+                    position: absolute;;
+                    transition: width 0.3s cubic-bezier(0.86, 0.12, 0.27, 0.85);
+                    width: 0;
+                    z-index: -1;
+                }
+                &:before {
+                    content: "\e9ca";
+                }
+                &:hover {
+                    &:after {
+                        transition: width 0.3s cubic-bezier(0.86, 0.12, 0.27, 0.85);
+                        width: 33.3%;
+                    }
+                }
+            }
+
+        }
+
+    }
+
+}
+
+.btn-left,
+.btn-right {
+    background-color: $blue;
+    border: none;
+    bottom: rem(-75);
+    display: block;
+    height: rem(150);
+    left: rem(-75);
+    opacity: 1;
+    outline: 0;
+    position: fixed;
+    width: rem(150);
+    z-index: 3;
+
+    @include breakpoint(medium) {
+        background-color: $white;
+        bottom: rem(-100);
+        height: rem(200);
+        left: rem(-100);
+        width: rem(200);
+    }
+
+    &.disable {
+        display: none;
+    }
+
+    &:before {
+        content: '\ea40';
+        color: $white;
+        font-family: 'icomoon';
+        font-size: rem(16);
+        left: unset;
+        position: absolute;
+        right: rem(27.5);
+        top: rem(27.5);
+        transition: all 0.3s cubic-bezier(0.86, 0, 0.07, 1);
+
+        @include breakpoint(medium) {
+            color: $black;
+            font-size: rem(24);
+            right: rem(40);
+            top: rem(40);
+        }
+    }
+
+    &:hover {
+        cursor: pointer;
+
+        @include cursorClick();
+
+        @include breakpoint(medium) {
+            background-color: $blue;
+
+            &:before {
+                color: $black;
+                right: rem(50);
+                transition: all 0.3s cubic-bezier(0.86, 0, 0.07, 1);
+
+                @include breakpoint(medium) {
+                    right: rem(50);
+                    color: $white;
+                }
+            }
+        }
+
+    }
+
+}
+
+.btn-right {
+    left: unset;
+    right: rem(-75);
+
+    @include breakpoint(medium) {
+        right: rem(-100);
+    }
+
+    &:after {
+        left: rem(45);
+        right: unset;
+    }
+
+    &:before {
+        content: "\ea3c";
+        left: rem(27.5);
+        right: unset;
+
+        @include breakpoint(medium) {
+            left: rem(40);
+        }
+    }
+
+    &:hover {
+        &:before {
+            right: unset;
+
+            @include breakpoint(medium) {
+                left: rem(50);
+            }
+        }
+    }
+}

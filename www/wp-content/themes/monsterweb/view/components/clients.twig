@@ -1,0 +1,9 @@
+<section class="clients-wrapper">
+    {% for item in post.get_field('clients-content') %}
+        <div class="clients-content">
+            <a href="{{ item.link }}" target="_blank">
+                <figure class="clients-logo" style="background-image: url({{ item.logo }})"></figure>
+            </a>
+        </div>
+    {% endfor %}
+</section>

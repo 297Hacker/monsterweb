@@ -1,0 +1,100 @@
+.wrapper-404 {
+    height: rem(400);
+    margin: auto;
+    opacity: 0;
+    position: relative;
+    top: -50%;
+    width: calc(100% - 20px);
+    transform: translateY(50%);
+
+    &.animation {
+        opacity: 1;
+        transition: opacity 0.4s cubic-bezier(.88, .22, .15, .77) 0.8s;
+    }
+
+    h2 {
+        margin-top: rem(80);
+        font-size: rem(60);
+        line-height: rem(60);
+    }
+
+    .left {
+
+        position: absolute;
+        left: 10%;
+        width: calc(50% - 10%);
+
+        h2, p {
+            text-align: left;
+        }
+
+        button {
+            display: block;
+            margin: 0;
+        }
+
+    }
+
+    .right {
+
+        position: absolute;
+        right: 10%;
+        width: calc(50% - 10%);
+
+        .cover {
+            display: block;
+            height: rem(500);
+            position: relative;
+            width: rem(600);
+
+            &:after {
+                animation: shake-left 3s ease-out infinite 1s;
+                border: solid 16px blue;
+                border-radius: 50%;
+                bottom: rem(150);
+                content: "";
+                display: block;
+                height: rem(50);
+                position: absolute;
+                width: rem(50);
+            }
+
+            &:before {
+                content: '\e901';
+                color: $black;
+                font-family: 'icomoon';
+                font-size: rem(280);
+            }
+
+            .circle_right {
+                &:after {
+                    animation: shake 3s ease-out infinite 1.5s;
+                    border: solid 16px blue;
+                    border-radius: 50%;
+                    bottom: rem(75);
+                    content: "";
+                    display: block;
+                    height: rem(40);
+                    position: absolute;
+                    right: 25%;
+                    width: rem(40);
+                }
+
+                &:before {
+                    animation: shake-top 3s ease-out infinite 2s;
+                    border: solid 16px blue;
+                    border-radius: 50%;
+                    content: "";
+                    display: block;
+                    height: rem(40);
+                    position: absolute;
+                    top: 0;
+                    right: 15%;
+                    width: rem(40);
+                }
+            }
+        }
+
+    }
+
+}

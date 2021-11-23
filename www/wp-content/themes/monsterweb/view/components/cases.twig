@@ -1,0 +1,20 @@
+<div class="case-wrapper">
+    {% for item in post.meta('cases_content') %}
+        <article class="slide" style="background-image: url('{{ item.background_image }}')">
+            <div class="background"></div>
+            <div class="content-wrapper">
+                <div class="content">
+                    <h1>{{ item.title }}</h1>
+                    <p>{{ item.content }}</p>
+                    <span class="tools">{{ item.tools }}</span>
+                    <span class="year">{{ item.year }}</span>
+                    {% if item.website %}
+                        <a class="website" href="{{ site.url }}/{{ item.link }}" target="_blank">{{ item.website }}</a>
+                    {% endif %}
+                </div>
+            </div>
+        </article>
+    {% endfor %}
+</div>
+<button type="button" aria-label="button-left" class="btn-left disable"></button>
+<button type="button" aria-label="button-right" class="btn-right"></button>

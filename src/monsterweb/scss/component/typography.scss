@@ -1,0 +1,199 @@
+@import "../../../../node_modules/font-awesome/scss/font-awesome";
+
+// Fonts
+@font-face {
+    font-family: Poppins;
+    src: url('#{$fa-font-path}/Poppins-Regular.eot'); /* IE9 Compat Modes */
+    src: url('#{$fa-font-path}/Poppins-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('#{$fa-font-path}/Poppins-Regular.woff2') format('woff2'), /* Super Modern Browsers */
+    url('#{$fa-font-path}/Poppins-Regular.woff') format('woff'), /* Pretty Modern Browsers */
+    url('#{$fa-font-path}/Poppins-Regular.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('#{$fa-font-path}/Poppins-Regular.svg#svgFontName') format('svg');    /* Legacy iOS */
+}
+
+@font-face {
+    font-family: Poppins-ExtraLight;
+    src: url('#{$fa-font-path}/Poppins-ExtraLight.eot'); /* IE9 Compat Modes */
+    src: url('#{$fa-font-path}/Poppins-ExtraLight.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('#{$fa-font-path}/Poppins-ExtraLight.woff2') format('woff2'), /* Super Modern Browsers */
+    url('#{$fa-font-path}/Poppins-ExtraLight.woff') format('woff'), /* Pretty Modern Browsers */
+    url('#{$fa-font-path}/Poppins-ExtraLight.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('#{$fa-font-path}/Poppins-ExtraLight.svg#svgFontName') format('svg');    /* Legacy iOS */
+}
+
+@font-face {
+    font-family: Poppins-Light;
+    src: url('#{$fa-font-path}/Poppins-Light.eot'); /* IE9 Compat Modes */
+    src: url('#{$fa-font-path}/Poppins-Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('#{$fa-font-path}/Poppins-Light.woff2') format('woff2'), /* Super Modern Browsers */
+    url('#{$fa-font-path}/Poppins-Light.woff') format('woff'), /* Pretty Modern Browsers */
+    url('#{$fa-font-path}/Poppins-Light.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('#{$fa-font-path}/Poppins-Light.svg#svgFontName') format('svg');    /* Legacy iOS */
+}
+
+@font-face {
+    font-family: Poppins-Thin;
+    src: url('#{$fa-font-path}/Poppins-Thin.eot'); /* IE9 Compat Modes */
+    src: url('#{$fa-font-path}/Poppins-Thin.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('#{$fa-font-path}/Poppins-Thin.woff2') format('woff2'), /* Super Modern Browsers */
+    url('#{$fa-font-path}/Poppins-Thin.woff') format('woff'), /* Pretty Modern Browsers */
+    url('#{$fa-font-path}/Poppins-Thin.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('#{$fa-font-path}/Poppins-Thin.svg#svgFontName') format('svg');    /* Legacy iOS */
+}
+
+@font-face {
+    font-family: Poppins-Medium;
+    src: url('#{$fa-font-path}/Poppins-Medium.eot'); /* IE9 Compat Modes */
+    src: url('#{$fa-font-path}/Poppins-Medium.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('#{$fa-font-path}/Poppins-Medium.woff2') format('woff2'), /* Super Modern Browsers */
+    url('#{$fa-font-path}/Poppins-Medium.woff') format('woff'), /* Pretty Modern Browsers */
+    url('#{$fa-font-path}/Poppins-Medium.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('#{$fa-font-path}/Poppins-Medium.svg#svgFontName') format('svg');    /* Legacy iOS */
+}
+
+@font-face {
+    font-family: 'icomoon';
+    src: url('#{$fa-font-path}/icomoon.eot');
+    src: url('#{$fa-font-path}/icomoon.eot#iefix') format('embedded-opentype'),
+    url('#{$fa-font-path}/icomoon.ttf') format('truetype'),
+    url('#{$fa-font-path}/icomoon.woff') format('woff'),
+    url('#{$fa-font-path}/icomoon.svg#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+%pop {
+
+    font-family: Poppins, Fallback sans-serif;
+
+}
+
+%popExtraLight {
+
+    font-family: Poppins-ExtraLight, Fallback sans-serif;
+
+}
+
+%popLight {
+
+    font-family: Poppins-Light, Fallback sans-serif;
+
+}
+
+%popMed {
+
+    font-family: Poppins-Medium, Fallback sans-serif;
+
+}
+
+%popThin {
+
+    font-family: Poppins-Thin, Fallback, sans-serif;
+
+}
+
+h1,
+h2,
+h3 {
+
+    @extend %popMed;
+
+    margin: 0;
+    padding: 0;
+
+}
+
+h1 {
+
+    font-size: rem(20);
+    line-height: rem(20);
+    position: relative;
+    width: fit-content;
+    z-index: 1;
+
+    &:after {
+        background-color: $blue;
+        bottom: 0;
+        content: '';
+        height: rem(6);
+        left: 0;
+        position: absolute;
+        width: 33.3%;
+        z-index: -1;
+    }
+
+    @include breakpoint(medium) {
+
+        font-size: rem(26);
+        line-height: rem(26);
+
+        &:after {
+            height: rem(10);
+        }
+
+    }
+
+    @include breakpoint(large) {
+
+        font-size: rem(30);
+        line-height: rem(30);
+
+    }
+
+}
+
+h2 {
+
+    font-size: rem(18);
+    line-height: rem(18);
+
+    @include breakpoint(medium) {
+
+        font-size: rem(22);
+        line-height: rem(22);
+
+    }
+
+    @include breakpoint(large) {
+
+        font-size: rem(26);
+        line-height: rem(26);
+
+    }
+
+}
+
+h3 {
+
+    font-size: rem(16);
+    line-height: rem(16);
+
+    @include breakpoint(medium) {
+
+        font-size: rem(18);
+        line-height: rem(18);
+
+    }
+
+    @include breakpoint(large) {
+
+        font-size: rem(22);
+        line-height: rem(22);
+
+    }
+
+}
+
+p {
+
+    font-size: rem(14);
+    line-height: rem(22);
+
+    @include breakpoint(large) {
+
+        font-size: rem(16);
+        line-height: rem(24);
+
+    }
+
+}

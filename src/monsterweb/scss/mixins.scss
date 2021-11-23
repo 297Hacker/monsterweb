@@ -1,0 +1,117 @@
+//Mixin
+@mixin clear() {
+
+    margin: 0;
+    padding: 0;
+
+}
+
+@mixin clearFix() {
+
+    clear: both;
+
+    &:after {
+
+        clear: both;
+        content: "";
+        display: table;
+
+    }
+}
+
+@mixin cursorClick() {
+    #cursor {
+        height: 0;
+        width: 0;
+    }
+
+    #cursor-bckground {
+        height: 0;
+        width: 0;
+    }
+}
+
+@mixin icomoon() {
+
+    display: inline-block;
+    font-family: 'icomoon';
+    line-height: 1px;
+    position: relative;
+
+}
+
+@mixin mainButton() {
+
+    @include transition();
+
+    background-color: $blue;
+    border: none;
+    box-shadow: 3px 4px 1px rgba($grey-med, 0.2);
+    border-radius: 2px;
+    color: $white;
+    cursor: pointer;
+    font-size: 12px;
+    outline: none;
+    padding: 15px 30px;
+    position: relative;
+    text-transform: uppercase;
+
+    @include breakpoint(medium) {
+
+        font-size: 16px;
+
+    }
+
+    &:before {
+
+        background: $blue;
+        bottom: 0;
+        content: '';
+        height: 4px;
+        position: absolute;
+        left: 0;
+        width: 0;
+        transition: 0.4s ease all;
+
+    }
+
+    &:hover {
+
+        @include transition();
+
+        background-color: $black;
+
+        &:before {
+
+            width: 100%;
+            transition: 0.7s ease all;
+
+        }
+
+    }
+
+}
+
+@mixin reset-ul() {
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+
+}
+
+@mixin transition() {
+
+    opacity: 1;
+    transition: all 0.4s cubic-bezier(.5,.01,.87,.62);
+
+}
+
+//  Wrapper function to write rem even faster
+
+@function rem($px) {
+
+    @return rem-calc($px);
+
+}

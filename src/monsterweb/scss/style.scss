@@ -1,0 +1,35 @@
+/*
+
+=============================================
+Project : Monsterweb
+Type    : Wordpress
+Version : 20170731
+=============================================
+
+*/
+//	========================
+//	Index is only used to
+//	import all the loose
+//	components
+//	========================
+
+// Import component css
+@import "../../../node_modules/@components/fullpage.js/dist/fullpage.css";
+
+// Import settings
+@import "settings";
+
+// Import mixing
+@import "mixins";
+
+// Import components css
+@import "component/main";
+@import "component/menu";
+@import "component/about";
+@import "component/cases";
+@import "component/typography";
+@import "component/404";
+@import "component/header";
+@import "component/keyframes";
+@import "component/mobile-menu";
+@import "component/services";

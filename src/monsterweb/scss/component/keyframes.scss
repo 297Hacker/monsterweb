@@ -1,0 +1,35 @@
+@keyframes scroll-down {
+    0%, 50%, 75%, 100% {
+        bottom: rem(25);
+    }
+    25% {
+        bottom: rem(10);
+    }
+}
+
+@keyframes shake {
+    0%, 50%, 100% {
+        bottom: rem(125);
+    }
+    25%, 75% {
+        bottom: rem(75);
+    }
+}
+
+@keyframes shake-left {
+    0%, 50%, 100% {
+        bottom: rem(200);
+    }
+    25%, 75% {
+        bottom: rem(150);
+    }
+}
+
+@keyframes shake-top {
+    0%, 50%, 100% {
+        top: rem(0);
+    }
+    25%, 75% {
+        top: rem(50);
+    }
+}

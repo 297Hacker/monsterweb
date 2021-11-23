@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+        {% include 'view/layout/head.twig' %}
+    {% endblock %}
+</head>
+<body>
+<span class="cursor disable"></span>
+<span class="cursor-background disable"></span>
+{% block logo %}
+    <a href="{{ site.url }}">
+        <img alt="logo" class="main-logo animation" src="{{ site.theme.uri }}/dist/img/monsterweb_logo.svg"/>
+    </a>
+{% endblock %}
+{% block menu %}
+    {% include "view/layout/menu.twig" %}
+{% endblock %}
+<header class="main-header animation">
+    {% block header %}
+        {% include 'view/layout/header.twig' %}
+    {% endblock %}
+</header>
+<main id="fullpage">
+    {% block content %}
+    {% endblock %}
+</main>
+<footer>
+    {% block footer %}
+        {% include 'view/layout/footer.twig' %}
+    {% endblock %}
+</footer>
+</body>
+</html>

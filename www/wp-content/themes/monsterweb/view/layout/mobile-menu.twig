@@ -1,0 +1,9 @@
+<nav class="mobile-menu">
+    <ul>
+        {% for item in mainmenu.get_items %}
+            <li class="mobile-item">
+                <a href="{{ item.get_link }}">{{ item.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</nav>

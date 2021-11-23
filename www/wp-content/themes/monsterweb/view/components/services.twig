@@ -1,0 +1,22 @@
+<section class="services-wrapper">
+    {% for item in post.get_field('service-content') %}
+        <div class="slide">
+            <div class="content left">
+                <h2>{{ item.title }}</h2>
+                <p>{{ item.content }}</p>
+                <a href="{{ item.link }}">
+                    <button class="cta-btn">{{ item.button }}</button>
+                </a>
+            </div>
+            <div class="content right">
+                <figure class="content-figure" style="background-image: url('{{ item.image }}')"></figure>
+            </div>
+        </div>
+    {% endfor %}
+    <nav class="nav-content">
+        <button aria-label="left"  class="left">
+        </button>
+        <button aria-label="right"  class="right">
+        </button>
+    </nav>
+</section>
