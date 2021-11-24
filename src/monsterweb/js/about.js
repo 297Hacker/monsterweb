@@ -4,12 +4,12 @@
     let Typed = require('../../../node_modules/@components/typed.js/lib/typed');
 
     let typed;
-    let typedmini;
     let $newcount;
     let $count = 50;
     let $body = $('body');
     let $about_wrapper = $('.about-cta');
-    let $text = $('.click-text');
+    let $textClick = $('.click-text');
+    let $text = $('.text-string');
     let type_content = document.querySelector('.typed-about');
     let $menuOpen = $('.menu-wrapper');
     const $button = $('.about-btn');
@@ -18,6 +18,7 @@
 
     $(document).ready(function () {
         $body.css('overflow', 'hidden');
+        $text.addClass('animate');
     });
 
     $button.on('click', function () {
@@ -45,23 +46,9 @@
 
     }
 
-    function miniType() {
-        let options_mini = {
-            stringsElement: '.text-string',
-            backDelay: 2000,
-            backSpeed: 20,
-            startDelay: 3500,
-            typeSpeed: 40,
-            loop: false
-        };
-
-        typedmini = new Typed('.text', options_mini)
-    }
-
     createTyped();
-    miniType();
 
-    $text.on('click', function(){
+    $textClick.on('click', function () {
         $count = $count - 10;
         $newcount = $count;
         typed.typeSpeed = $newcount;
