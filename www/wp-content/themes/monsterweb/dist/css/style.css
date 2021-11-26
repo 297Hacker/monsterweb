@@ -4591,14 +4591,17 @@ p {
 }
 
 .wrapper-404 .right {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   position: absolute;
-  right: 10%;
-  width: calc(50% - 10%);
+  right: 0;
+  width: 50%;
 }
 
 .wrapper-404 .right .cover {
   display: block;
-  height: 31.25rem;
+  height: 26.5625rem;
   position: relative;
   width: 37.5rem;
 }
@@ -4611,6 +4614,7 @@ p {
   bottom: 9.375rem;
   content: "";
   display: block;
+  left: 1.25rem;
   height: 3.125rem;
   position: absolute;
   width: 3.125rem;
@@ -4621,14 +4625,18 @@ p {
   color: #0D0D0F;
   font-family: 'icomoon';
   font-size: 17.5rem;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
 .wrapper-404 .right .cover .circle_right:after {
-  -webkit-animation: shake 3s ease-out infinite 1.5s;
-  animation: shake 3s ease-out infinite 1.5s;
+  -webkit-animation: shake 3s ease-out infinite 1.2s;
+  animation: shake 3s ease-out infinite 1.2s;
   border: solid 16px blue;
   border-radius: 50%;
-  bottom: 4.6875rem;
+  bottom: 0;
   content: "";
   display: block;
   height: 2.5rem;
@@ -4638,8 +4646,8 @@ p {
 }
 
 .wrapper-404 .right .cover .circle_right:before {
-  -webkit-animation: shake-top 3s ease-out infinite 2s;
-  animation: shake-top 3s ease-out infinite 2s;
+  -webkit-animation: shake-top 3s ease-out infinite 1.4s;
+  animation: shake-top 3s ease-out infinite 1.4s;
   border: solid 16px blue;
   border-radius: 50%;
   content: "";
@@ -4881,25 +4889,25 @@ p {
 }
 
 @-webkit-keyframes shake-left {
-  0%, 50%, 100% {
+  25%, 75% {
     bottom: 12.5rem;
   }
-  25%, 75% {
+  0%, 50% {
     bottom: 9.375rem;
   }
 }
 
 @keyframes shake-left {
-  0%, 50%, 100% {
+  25%, 75% {
     bottom: 12.5rem;
   }
-  25%, 75% {
+  0%, 50% {
     bottom: 9.375rem;
   }
 }
 
 @-webkit-keyframes shake-top {
-  0%, 50%, 100% {
+  0%, 50% {
     top: 0;
   }
   25%, 75% {
@@ -4908,7 +4916,7 @@ p {
 }
 
 @keyframes shake-top {
-  0%, 50%, 100% {
+  0%, 50% {
     top: 0;
   }
   25%, 75% {
