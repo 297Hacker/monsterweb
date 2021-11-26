@@ -37,13 +37,14 @@
 
     .right {
 
+        height: fit-content;
         position: absolute;
-        right: 10%;
-        width: calc(50% - 10%);
+        right: 0;
+        width: 50%;
 
         .cover {
             display: block;
-            height: rem(500);
+            height: rem(425);
             position: relative;
             width: rem(600);
 
@@ -54,6 +55,7 @@
                 bottom: rem(150);
                 content: "";
                 display: block;
+                left: rem(20);
                 height: rem(50);
                 position: absolute;
                 width: rem(50);
@@ -64,14 +66,17 @@
                 color: $black;
                 font-family: 'icomoon';
                 font-size: rem(280);
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
             }
 
             .circle_right {
                 &:after {
-                    animation: shake 3s ease-out infinite 1.5s;
+                    animation: shake 3s ease-out infinite 1.2s;
                     border: solid 16px blue;
                     border-radius: 50%;
-                    bottom: rem(75);
+                    bottom: rem(0);
                     content: "";
                     display: block;
                     height: rem(40);
@@ -81,7 +86,7 @@
                 }
 
                 &:before {
-                    animation: shake-top 3s ease-out infinite 2s;
+                    animation: shake-top 3s ease-out infinite 1.4s;
                     border: solid 16px blue;
                     border-radius: 50%;
                     content: "";

@@ -17,16 +17,16 @@
 }
 
 @keyframes shake-left {
-    0%, 50%, 100% {
+    25%, 75% {
         bottom: rem(200);
     }
-    25%, 75% {
+    0%, 50% {
         bottom: rem(150);
     }
 }
 
 @keyframes shake-top {
-    0%, 50%, 100% {
+    0%, 50%{
         top: rem(0);
     }
     25%, 75% {
