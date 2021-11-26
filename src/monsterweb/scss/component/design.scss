@@ -1,0 +1,19 @@
+.design {
+    position: absolute;
+    top: 100px;
+    width: calc(100% - 100px);
+    margin: 0 50px;
+
+    .logo-wrapper {
+        display: block;
+        float: left;
+        margin: rem(0 10);
+        height: rem(100);
+        width: calc(33.3% - 20px);
+
+        .logo {
+            width: 100%;
+        }
+    }
+
+}
