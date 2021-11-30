@@ -8,6 +8,7 @@
         $logo.addClass('animation');
         require('./components/animation');
         require('./components/cases');
+        require('./components/design');
         require('./components/general');
         require('./components/menu');
     });

@@ -1,0 +1,46 @@
+.design {
+    height: calc(100vh - 55px);
+    position: absolute;
+    top: rem(55);
+    width: calc(100% - 100px);
+    margin: 0 50px;
+
+    @include breakpoint(medium) {
+        height: calc(100vh - 100px);
+        top: rem(100);
+    }
+
+    .logo-wrapper {
+        display: block;
+        float: left;
+        padding: rem(25 0);
+        height: fit-content;
+        width: 100%;
+
+        @include breakpoint(medium) {
+            padding: rem(50);
+            width: calc(50% - 100px);
+        }
+
+        @include breakpoint(large) {
+            padding: rem(75);
+            width: calc(33.3% - 150px);
+        }
+
+        .design-logo {
+            max-width: rem(400);
+            opacity: 0;
+            width: 100%;
+
+            &:hover {
+                animation: spin 10s cubic-bezier(.88, .22, .15, .55) infinite;
+            }
+
+            &.animate {
+                opacity: 1;
+                transition: opacity 0.3s ease-in;
+            }
+        }
+    }
+
+}

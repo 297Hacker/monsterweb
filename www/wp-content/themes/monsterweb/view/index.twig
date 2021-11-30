@@ -21,4 +21,9 @@
             {% include 'view/components/cases.twig' %}
         </section>
     {% endif %}
+    {% if '/design/' in post.link %}
+        <section class="design">
+            {% include 'view/components/design.twig' %}
+        </section>
+    {% endif %}
 {% endblock %}
