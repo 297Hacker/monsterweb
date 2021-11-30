@@ -1,9 +1,15 @@
 .design {
     height: calc(100vh - 55px);
+    opacity: 0;
     position: absolute;
     top: rem(55);
     width: calc(100% - 100px);
     margin: 0 50px;
+
+    &.animation {
+        opacity: 1;
+        transition: opacity 0.3s cubic-bezier(.88, .22, .15, .55);
+    }
 
     @include breakpoint(medium) {
         height: calc(100vh - 100px);
@@ -29,17 +35,12 @@
 
         .design-logo {
             max-width: rem(400);
-            opacity: 0;
             width: 100%;
 
             &:hover {
                 animation: spin 10s cubic-bezier(.88, .22, .15, .55) infinite;
             }
 
-            &.animate {
-                opacity: 1;
-                transition: opacity 0.3s ease-in;
-            }
         }
     }
 
