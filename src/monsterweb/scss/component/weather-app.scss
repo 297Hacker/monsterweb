@@ -1,0 +1,16 @@
+.weather-app {
+    height: calc(100vh - 100px);
+    margin: auto;
+    opacity: 1;
+    position: relative;
+    top: rem(100);
+    width: calc(100% - 20px);
+
+    .load {
+        opacity: 0;
+
+        &.active {
+            opacity: 1;
+        }
+    }
+}
