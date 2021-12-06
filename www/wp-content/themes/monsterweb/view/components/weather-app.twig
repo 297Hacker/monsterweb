@@ -1,17 +1,39 @@
 <section class="search">
-    <input type="text" class="search-input">
-    <button class="search-weather">search</button>
+    <section class="search-wrapper">
+        <input type="text" class="search-input" placeholder="{{ option.weather_app_text }}">
+        <button class="main-cta-btn search-weather">search</button>
+    </section>
 </section>
 <section class="loading">
     <div class="load">Loading...</div>
 </section>
-<section>
-    <h2 class="weatherCity">name</h2>
-    <div class="weatherDescription">description</div>
-    <div class="weatherCelsius">temp</div>
-    <div class="weatherFeelsLike">temp</div>
-    <div class="weatherWindSpeed">temp</div>
-    <div class="weatherSunRise">temp</div>
-    <div class="weatherSunSet">temp</div>
-    <div class="weatherFah">temp</div>
+<section class="main inactive">
+    <section class="main-wrapper">
+        <section class="weatherDesc-wrapper">
+            <h2 class="weatherCity">name</h2>
+            <div class="weatherDescription">description</div>
+        </section>
+        <section class="weatherTemp-wrapper">
+            <section class="cels-wrapper">
+                <div class="weatherCelsius">temp</div>
+                <div class="weatherFeelsLike">temp</div>
+            </section>
+            <section class="fah-wrapper">
+                <div class="weatherFah not-active">temp</div>
+                <div class="weatherFahFeelLike not-active">temp</div>
+            </section>
+        </section>
+        <button class="change-temp-output">in °F</button>
+    </section>
+    <section class="small-content-wrapper">
+        <section class="small-content">
+            <div class="weatherSunRise">temp</div>
+        </section>
+        <section class="small-content">
+            <div class="weatherWindSpeed">temp</div>
+        </section>
+        <section class="small-content">
+            <div class="weatherSunSet">temp</div>
+        </section>
+    </section>
 </section>

@@ -6,11 +6,271 @@
     top: rem(100);
     width: calc(100% - 20px);
 
-    .load {
-        opacity: 0;
+    .main {
+        opacity: 1;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: rem(150);
+        width: rem(450);
 
-        &.active {
-            opacity: 1;
+        &.inactive {
+            opacity: 0;
+        }
+
+        &.clouds {
+            .main-wrapper {
+                &:after {
+                    content: "\e903";
+                }
+            }
+        }
+
+        &.drizzle {
+            .main-wrapper {
+                &:after {
+                    content: "\e906";
+                }
+            }
+        }
+
+        &.fog {
+            .main-wrapper {
+                &:after {
+                    content: "\e905";
+                }
+            }
+        }
+        &.clear {
+            .main-wrapper {
+                &:after {
+                    content: "\e902";
+                }
+            }
+        }
+        &.rain {
+            .main-wrapper {
+                &:after {
+                    content: "\e901";
+                }
+            }
+        }
+        &.sun {
+            .main-wrapper {
+                &:after {
+                    content: "\e902";
+                }
+            }
+        }
+
+        .main-wrapper {
+            position: relative;
+
+            &:after {
+                content: '\e9b7';
+                color: $blue;
+                font-family: 'icomoon';
+                font-size: rem(140);
+                position: absolute;
+                right: 10%;
+                top: 60%;
+                transform: translateY(-40%);
+            }
+
+            .weatherDesc-wrapper,
+            .weatherTemp-wrapper {
+                height: rem(100);
+                position: relative;
+                max-width: 100%;
+                width: fit-content;
+
+                .weatherCity {
+                    @extend %popExtraLight;
+                    font-size: rem(60);
+                    line-height: rem(60);
+                    text-transform: capitalize;
+                }
+
+                .weatherDescription {
+                    position: absolute;
+                    right: 0;
+                }
+
+                .cels-wrapper,
+                .fah-wrapper {
+                    height: inherit;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+
+                    .weatherCelsius,
+                    .weatherFah {
+                        font-size: rem(66);
+                        line-height: rem(66);
+                        opacity: 1;
+                        width: fit-content;
+
+                        &.not-active {
+                            opacity: 0;
+                        }
+                    }
+
+                    .weatherFeelsLike,
+                    .weatherFahFeelLike {
+                        bottom: rem(20);
+                        font-size: rem(16);
+                        line-height: rem(16);
+                        opacity: 1;
+                        position: absolute;
+                        right: 0;
+
+                        &.not-active {
+                            opacity: 0;
+                        }
+                    }
+                }
+            }
+
+            .change-temp-output {
+                background-color: $blue;
+                border: 0;
+                border-radius: rem(5);
+                box-shadow: 0 3px 9px rgba(0, 0, 0, 0.1);
+                color: $white;
+                height: rem(50);
+                right: 0;
+                position: absolute;
+                top: 0;
+                width: rem(50);
+                transition: all 0.1s cubic-bezier(.5, .01, .87, .62);
+
+                &:hover {
+                    background-color: $neon;
+                    cursor: pointer;
+                    transition: all 0.2s cubic-bezier(.5, .01, .87, .62);
+                }
+            }
+        }
+
+        .small-content-wrapper {
+            height: rem(100);
+            position: relative;
+            margin-top: rem(25);
+            max-width: 100%;
+
+            .small-content {
+                border-radius: rem(5);
+                box-shadow: 0 3px 9px rgba(0, 0, 0, 0.1);
+                color: $black;
+                float: left;
+                height: rem(100);
+                margin: 0 10px;
+                position: relative;
+                width: calc(33.3% - 20px);
+
+                &:before {
+                    color: $blue;
+                    content: '\e907';
+                    font-family: 'icomoon';
+                    font-size: rem(64);
+                    position: absolute;
+                    left: 50%;
+                    top: calc(0 - 32px);
+                    transform: translateX(-50%);
+                }
+
+                &:first-child {
+                    margin: 0;
+                    width: 33%;
+
+                    &:before {
+                        content: '\e90a';
+                    }
+                }
+
+                &:last-child {
+                    margin: 0;
+                    width: 33.3%;
+
+                    &:before {
+                        content: '\e908';
+                    }
+                }
+
+                .weatherSunRise,
+                .weatherWindSpeed,
+                .weatherSunSet {
+                    margin: rem(55 0 0 0);
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    .search {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+
+        .search-wrapper {
+            position: relative;
+            width: rem(450);
+
+            .search-input {
+                @extend %popLight;
+                background-color: $grey-lig;
+                border: 0;
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+                border-top-left-radius: rem(5);
+                border-bottom-left-radius: rem(5);
+                color: $black;
+                height: rem(50);
+                padding: rem(0 5);
+                width: rem(300);
+
+                &:focus {
+                    outline: none;
+                }
+            }
+
+            .main-cta-btn {
+                height: rem(50);
+                padding: rem(15 30);
+                box-shadow: unset;
+
+                &:hover {
+                    background-color: $neon;
+                    padding: rem(15 40 15 15);
+                }
+
+                &:after {
+                    top: rem(17);
+                }
+            }
+
+            .search-weather {
+                border-top-right-radius: rem(5);
+                border-bottom-right-radius: rem(5);
+                position: absolute;
+                right: rem(2);
+                width: rem(150);
+            }
+        }
+    }
+
+    .loading {
+        top: 100px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+
+        .load {
+            opacity: 0;
+
+            &.active {
+                opacity: 1;
+            }
         }
     }
 }

@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?g4usn8');
-  src:  url('fonts/icomoon.eot?g4usn8#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?g4usn8') format('truetype'),
-    url('fonts/icomoon.woff?g4usn8') format('woff'),
-    url('fonts/icomoon.svg?g4usn8#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?yc0p3r');
+  src:  url('fonts/icomoon.eot?yc0p3r#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?yc0p3r') format('truetype'),
+    url('fonts/icomoon.woff?yc0p3r') format('woff'),
+    url('fonts/icomoon.svg?yc0p3r#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,17 +25,47 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-saturn:before {
+.icon-cloud:before {
+  content: "\e900";
+}
+.icon-cloud-rain:before {
   content: "\e901";
+}
+.icon-sun:before {
+  content: "\e902";
+}
+.icon-clouds:before {
+  content: "\e903";
+}
+.icon-cloud-snowflakes:before {
+  content: "\e904";
+}
+.icon-cloud-snow:before {
+  content: "\e905";
+}
+.icon-cloud-fog:before {
+  content: "\e906";
+}
+.icon-wind:before {
+  content: "\e907";
+}
+.icon-sunset:before {
+  content: "\e908";
+}
+.icon-sunset1:before {
+  content: "\e909";
+}
+.icon-sunrise:before {
+  content: "\e90a";
+}
+.icon-saturn:before {
+  content: "\e90b";
 }
 .icon-coin-euro:before {
   content: "\e93c";
 }
-.icon-location2:before {
-  content: "\e948";
-}
-.icon-spinner10:before {
-  content: "\e983";
+.icon-spinner9:before {
+  content: "\e982";
 }
 .icon-power-cord:before {
   content: "\e9b7";
@@ -57,12 +87,6 @@
 }
 .icon-facebook2:before {
   content: "\ea91";
-}
-.icon-instagram:before {
-  content: "\ea92";
-}
-.icon-whatsapp:before {
-  content: "\ea93";
 }
 .icon-wordpress:before {
   content: "\eab4";
