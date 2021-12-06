@@ -7,7 +7,6 @@
     let $header = $('.main-header');
     let $menuOpen = $('.menu-wrapper');
     const $button = $('.main-cta-btn');
-    const $toggle = $('.menu-toggle');
     const $inputName = $('#name-input');
 
     // required js file
@@ -22,7 +21,7 @@
 
     $button.on('click', function () {
         $menuOpen.addClass('open');
-        $toggle.addClass('open');
+        $menu.addClass('open');
         $inputName.focus();
     });
 

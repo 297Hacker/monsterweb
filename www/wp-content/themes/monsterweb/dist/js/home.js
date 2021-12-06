@@ -60,11 +60,12 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 8);
+/******/ 	return __webpack_require__(__webpack_require__.s = 14);
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */
+/******/ ({
+
+/***/ 0:
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -10952,21 +10953,16 @@ return jQuery;
 
 
 /***/ }),
-/* 1 */,
-/* 2 */,
-/* 3 */,
-/* 4 */,
-/* 5 */,
-/* 6 */,
-/* 7 */,
-/* 8 */
+
+/***/ 14:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(9);
+module.exports = __webpack_require__(15);
 
 
 /***/ }),
-/* 9 */
+
+/***/ 15:
 /***/ (function(module, exports, __webpack_require__) {
 
 (function () {
@@ -10978,13 +10974,12 @@ module.exports = __webpack_require__(9);
     var $header = $('.main-header');
     var $menuOpen = $('.menu-wrapper');
     var $button = $('.main-cta-btn');
-    var $toggle = $('.menu-toggle');
     var $inputName = $('#name-input');
 
     // required js file
     $(document).ready(function () {
         $body.css('overflow', 'hidden');
-        __webpack_require__(10);
+        __webpack_require__(16);
         setTimeout(function () {
             $header.removeClass('animation');
             $menu.removeClass('animation');
@@ -10993,13 +10988,14 @@ module.exports = __webpack_require__(9);
 
     $button.on('click', function () {
         $menuOpen.addClass('open');
-        $toggle.addClass('open');
+        $menu.addClass('open');
         $inputName.focus();
     });
 })();
 
 /***/ }),
-/* 10 */
+
+/***/ 16:
 /***/ (function(module, exports, __webpack_require__) {
 
 (function () {
@@ -11014,4 +11010,5 @@ module.exports = __webpack_require__(9);
 })();
 
 /***/ })
-/******/ ]);
+
+/******/ });

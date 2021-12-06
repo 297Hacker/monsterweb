@@ -27,10 +27,11 @@ mix.react('./src/' + config.theme_dirname + '/js/react.js', './www/wp-content/th
 
 // compile JS
 mix.js('./src/' + config.theme_dirname + '/js/libs.js', './www/wp-content/themes/' + config.theme_dirname + '/dist/js')
+    .js('./src/' + config.theme_dirname + '/js/main.js', './www/wp-content/themes/' + config.theme_dirname + '/dist/js')
     .js('./src/' + config.theme_dirname + '/js/about.js', './www/wp-content/themes/' + config.theme_dirname + '/dist/js')
     .js('./src/' + config.theme_dirname + '/js/home.js', './www/wp-content/themes/' + config.theme_dirname + '/dist/js')
     .js('./src/' + config.theme_dirname + '/js/components/contact-form.js', './www/wp-content/themes/' + config.theme_dirname + '/dist/js')
-    .js('./src/' + config.theme_dirname + '/js/main.js', './www/wp-content/themes/' + config.theme_dirname + '/dist/js');
+    .js('./src/' + config.theme_dirname + '/js/components/weather-app.js', './www/wp-content/themes/' + config.theme_dirname + '/dist/js');
 
 //compile fonts
 mix.copy('./src/' + config.theme_dirname + '/fonts', './www/wp-content/themes/' + config.theme_dirname + '/dist/fonts')

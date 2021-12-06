@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 13);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -10956,22 +10956,14 @@ return jQuery;
 /* 2 */,
 /* 3 */,
 /* 4 */,
-/* 5 */,
-/* 6 */,
-/* 7 */,
-/* 8 */,
-/* 9 */,
-/* 10 */,
-/* 11 */,
-/* 12 */,
-/* 13 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(14);
+module.exports = __webpack_require__(6);
 
 
 /***/ }),
-/* 14 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function () {
@@ -10982,16 +10974,15 @@ module.exports = __webpack_require__(14);
     // required js file
     $(document).ready(function () {
         $logo.addClass('animation');
-        __webpack_require__(15);
-        __webpack_require__(16);
-        __webpack_require__(17);
-        __webpack_require__(18);
-        __webpack_require__(19);
+        __webpack_require__(7);
+        __webpack_require__(8);
+        __webpack_require__(9);
+        __webpack_require__(10);
     });
 })();
 
 /***/ }),
-/* 15 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function () {
@@ -11022,7 +11013,7 @@ module.exports = __webpack_require__(14);
 })();
 
 /***/ }),
-/* 16 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function () {
@@ -11067,126 +11058,7 @@ module.exports = __webpack_require__(14);
 })();
 
 /***/ }),
-/* 17 */
-/***/ (function(module, exports) {
-
-var _createClass = function () {
-    function defineProperties(target, props) {
-        for (var i = 0; i < props.length; i++) {
-            var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
-        }
-    }return function (Constructor, protoProps, staticProps) {
-        if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
-    };
-}();
-
-function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-        throw new TypeError("Cannot call a class as a function");
-    }
-}
-
-var input = document.querySelector('.search-input');
-var submit = document.querySelector('.search-weather');
-var loading = document.querySelector('.load');
-var weatherCity = document.querySelector('.weatherCity');
-var weatherDesc = document.querySelector('.weatherDescription');
-var weatherCels = document.querySelector('.weatherCelsius');
-var weatherFeelsLike = document.querySelector('.weatherFeelsLike');
-var weatherSpeed = document.querySelector('.weatherWindSpeed');
-var weatherSunRise = document.querySelector('.weatherSunRise');
-var weatherSunSet = document.querySelector('.weatherSunSet');
-var weatherFah = document.querySelector('.weatherFah');
-
-submit.addEventListener('click', searchWeather);
-
-var APP_ID = '89a1062777a8c237665d0c93060e4ac3';
-
-var Http = function () {
-    function Http() {
-        _classCallCheck(this, Http);
-    }
-
-    _createClass(Http, null, [{
-        key: 'fetchData',
-        value: function fetchData(url) {
-            return new Promise(function (resolve, reject) {
-                var HTTP = new XMLHttpRequest();
-                HTTP.open('GET', url);
-                HTTP.onreadystatechange = function () {
-                    if (HTTP.readyState == XMLHttpRequest.DONE && HTTP.status == 200) {
-                        var response_data = JSON.parse(HTTP.responseText);
-                        resolve(response_data);
-                    } else if (HTTP.readyState == XMLHttpRequest.DONE) {
-                        alert("city you are searching for is not found");
-                        reject('something went wrong');
-                        loading.classList.remove('active');
-                    }
-                };
-                HTTP.send();
-            });
-        }
-    }]);
-
-    return Http;
-}();
-
-var weatherData = function weatherData(name, description, cels, feelsLike, windSpeed, sunRise, sunSet) {
-    _classCallCheck(this, weatherData);
-
-    this.name = name;
-    this.description = description;
-    this.cels = cels;
-    this.feelsLike = feelsLike;
-    this.windSpeed = windSpeed;
-    this.sunRise = sunRise;
-    this.sunSet = sunSet;
-    this.fah = '';
-};
-
-var weatherProxyHandler = {
-    get: function get(target, property) {
-        return Reflect.get(target, property);
-    },
-    set: function set(target, property, value) {
-        var newValue = (value * 1.8 + 32).toFixed(2) + '°F';
-        return Reflect.set(target, property, newValue);
-    }
-};
-
-function searchWeather() {
-    var searchedCity = input.value.trim();
-    var URL = 'http://api.openweathermap.org/data/2.5/weather?q=' + searchedCity + '&units=metric&appid=' + APP_ID;
-
-    if (searchedCity.length === 0) {
-        alert("enter a city name");
-    }
-    loading.classList.add('active');
-    Http.fetchData(URL).then(function (response) {
-        var WEATHER_DATA = new weatherData(searchedCity, response.weather[0].description, response.main.temp, response.main.feels_like, response.wind.speed, response.sys.sunrise, response.sys.sunset);
-        var WEATHER_PROXY = new Proxy(WEATHER_DATA, weatherProxyHandler);
-        WEATHER_PROXY.fah = response.main.temp;
-        updateWeather(WEATHER_PROXY);
-    }).catch(function (err) {
-        return console.log(err);
-    });
-}
-
-function updateWeather(weatherData) {
-    weatherCity.textContent = weatherData.name;
-    weatherDesc.textContent = weatherData.description;
-    weatherCels.textContent = Math.round(weatherData.cels) + "°C";
-    weatherFeelsLike.textContent = Math.round(weatherData.feelsLike) + "°C";
-    weatherSpeed.textContent = weatherData.windSpeed;
-    weatherSunRise.textContent = weatherData.sunRise;
-    weatherSunSet.textContent = weatherData.sunSet;
-    weatherFah.textContent = weatherData.fah;
-
-    loading.classList.remove('active');
-}
-
-/***/ }),
-/* 18 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function () {
@@ -11229,7 +11101,7 @@ function updateWeather(weatherData) {
 })();
 
 /***/ }),
-/* 19 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function () {

@@ -46,11 +46,11 @@
 
     background-color: $blue;
     border: none;
-    box-shadow: 3px 4px 1px rgba($grey-med, 0.2);
     border-radius: 2px;
     color: $white;
     cursor: pointer;
     font-size: 12px;
+    height: 50px;
     outline: none;
     padding: 15px 30px;
     position: relative;
@@ -64,7 +64,8 @@
 
     &:before {
 
-        background: $blue;
+        background: $grey-lig;
+        border-bottom-right-radius: 10px;
         bottom: 0;
         content: '';
         height: 4px;
@@ -79,11 +80,11 @@
 
         @include transition();
 
-        background-color: $black;
+        background-color: $neon;
 
         &:before {
 
-            width: 100%;
+            width: 97%;
             transition: 0.7s ease all;
 
         }
