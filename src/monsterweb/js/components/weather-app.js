@@ -82,7 +82,7 @@ const weatherProxyHandler = {
 
 function searchWeather() {
     const searchedCity = input.value.trim();
-    const URL = 'http://api.openweathermap.org/data/2.5/weather?q=' + searchedCity + '&units=metric&appid=' + APP_ID;
+    const URL = 'https://api.openweathermap.org/data/2.5/weather?q=' + searchedCity + '&units=metric&appid=' + APP_ID;
 
     if (searchedCity.length === 0) {
         alert("enter a city name");
