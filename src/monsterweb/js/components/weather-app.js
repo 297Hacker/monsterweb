@@ -95,7 +95,6 @@ function searchWeather() {
         WEATHER_PROXY.fahFeelLike = response.main.feels_like;
         updateWeather(WEATHER_PROXY);
     }).catch(err => console.log(err));
-    main.classList.remove('inactive');
 }
 
 function setIcons(desc) {
@@ -149,6 +148,8 @@ function updateWeather(weatherData) {
     weatherFah.textContent = weatherData.fah;
     weatherFahFeelLike.textContent = "feels like " + weatherData.fahFeelLike;
 
-    loading.classList.remove('active');
     setIcons(weatherData.status);
+
+    loading.classList.remove('active');
+    main.classList.remove('inactive');
 }

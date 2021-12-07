@@ -9,10 +9,19 @@
     .main {
         opacity: 1;
         position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        top: rem(150);
-        width: rem(450);
+        left: 0;
+        right: 0;
+        transform: unset;
+        top: rem(100);
+        width: 100%;
+
+        @include breakpoint(medium) {
+            left: 50%;
+            top: rem(150);
+            width: rem(450);
+            transform: translateX(-50%);
+            right: unset;
+        }
 
         &.inactive {
             opacity: 0;
@@ -202,6 +211,13 @@
                 .weatherSunSet {
                     margin: rem(55 0 0 0);
                     text-align: center;
+                    font-size: rem(13);
+                    line-height: rem(13);
+
+                    @include breakpoint(medium){
+                        font-size: rem(18);
+                        line-height: rem(18);
+                    }
                 }
             }
         }
@@ -209,12 +225,25 @@
 
     .search {
         position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
+        left: 0;
+        right: 0;
+        transform: unset;
+
+        @include breakpoint(medium) {
+            left: 50%;
+            right: unset;
+            transform: translateX(-50%);
+        }
 
         .search-wrapper {
+            border-radius: rem(5);
+            box-shadow: 0 3px 9px rgba(0, 0, 0, 0.1);
             position: relative;
-            width: rem(450);
+            width: 100%;
+
+            @include breakpoint(medium) {
+                width: rem(450);
+            }
 
             .search-input {
                 @extend %popLight;
@@ -227,7 +256,11 @@
                 color: $black;
                 height: rem(50);
                 padding: rem(0 5);
-                width: rem(300);
+                width: calc(70% - 10px);
+
+                @include breakpoint(medium) {
+                    width: calc(300px - 10px);
+                }
 
                 &:focus {
                     outline: none;
@@ -253,8 +286,12 @@
                 border-top-right-radius: rem(5);
                 border-bottom-right-radius: rem(5);
                 position: absolute;
-                right: rem(2);
-                width: rem(150);
+                right: 0;
+                width: 30%;
+
+                @include breakpoint(medium){
+                    width: rem(150);
+                }
             }
         }
     }

@@ -26,10 +26,10 @@
 
     function initCursor() {
         $body.on('mousemove', function () {
-        }).on('mouseenter', "a, button, .typed-about, #name-input, #lastname-input, #email-input, #message-input, .click-text", function () {
+        }).on('mouseenter', "a, button, .typed-about, #name-input, #lastname-input, #email-input, #message-input, .click-text, input", function () {
             $cursor.addClass('disable');
             $cursorbck.addClass('disable');
-        }).on('mouseleave', "a, button, .typed-about, #name-input, #lastname-input, #email-input, #message-input, .click-text", function () {
+        }).on('mouseleave', "a, button, .typed-about, #name-input, #lastname-input, #email-input, #message-input, .click-text, input", function () {
             $cursor.removeClass('disable');
             $cursorbck.removeClass('disable');
         });
